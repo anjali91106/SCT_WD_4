@@ -1,18 +1,22 @@
-'use client'
 
-import { Calendar } from "@/components/ui/calendar";
-import React from "react";
+ "use client"
 
-export default function CalenderUi ()  {
-    const [date, setDate] = React.useState<Date | undefined>(new Date())
-return (
-    <>
-      <Calendar 
-       mode="single"
-        selected={date}
-        onSelect={setDate}
-        className="rounded-lg border"
-      />
-    </>
-)
+import * as React from "react"
+
+import { Calendar } from "@/components/ui/calendar"
+
+export function CalenderUi() {
+  const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+  return (
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      className="rounded-md border shadow-sm"
+      captionLayout="dropdown"
+    />
+  )
 }
+
+ export default CalenderUi

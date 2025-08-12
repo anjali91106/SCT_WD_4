@@ -1,5 +1,5 @@
-import CalenderUi from "@/components/calenderui";
 import ToDoList from "@/components/todolist";
+import CalendarWrapper from "@/components/calendarwrapper";
 
 export default function Home() {
 
@@ -21,7 +21,7 @@ export default function Home() {
 
         </div>
         <div className="w-1/3">
-          <CalenderUi />
+          <CalendarWrapper />
         </div>
       </div>
     </main>
