@@ -40,8 +40,9 @@ const ToDoList = () => {
     }
 
     return (
-        <div className="max-w-md mx-auto p-4 bg-[#F5F3F0] rounded-xl shadow-md">
-            <div className="flex mt-4 space-x-2">
+        <div className="max-w-md w-full mx-auto p-4 bg-[#F5F3F0] rounded-xl shadow-md">
+            {/* Input + Add Button */}
+            <div className="flex flex-col sm:flex-row mt-4 gap-2">
                 <Input
                     placeholder="Add Task"
                     value={task}
@@ -56,16 +57,17 @@ const ToDoList = () => {
                 </Button>
             </div>
 
+            {/* Task List */}
             {todos.map((todo, i) => (
                 <div
                     key={i}
-                    className="flex items-center justify-between bg-[#E0E3DC] p-3 my-2 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                    className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-[#E0E3DC] p-3 my-2 rounded-lg shadow-sm hover:shadow-md transition-shadow gap-2 sm:gap-0"
                 >
                     {editingIndex === i ? (
                         <>
                             <Input
                                 placeholder="Enter New Task .."
-                                className="w-full mr-2 rounded-lg border-[#B8BDB0] focus:border-[#8A9A85] focus:ring-[#8A9A85]"
+                                className="w-full sm:mr-2 rounded-lg border-[#B8BDB0] focus:border-[#8A9A85] focus:ring-[#8A9A85]"
                                 value={editedTask}
                                 onChange={(e) => setEditedTask(e.target.value)}
                             />
@@ -79,7 +81,7 @@ const ToDoList = () => {
                     ) : (
                         <>
                             <span className="text-[#4B4F47] font-medium">{todo}</span>
-                            <div className="flex space-x-2">
+                            <div className="flex flex-wrap sm:flex-nowrap gap-2">
                                 <Button
                                     className="bg-[#C4C7C0] text-[#333] hover:bg-[#B1B5AD] rounded-lg px-3 py-1"
                                     onClick={() => handleEdit(i)}
@@ -101,6 +103,7 @@ const ToDoList = () => {
                 </div>
             ))}
         </div>
+
 
 
     )
