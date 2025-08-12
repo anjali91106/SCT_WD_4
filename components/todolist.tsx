@@ -15,13 +15,13 @@ const ToDoList = () => {
     const handleAdd = (newTask: string) => {
         if (!newTask.trim()) return;
         if (!newTask.trim()) return;
-        let updated = addTodo(todos, newTask);
+        const updated = addTodo(todos, newTask);
         setTodos(updated);
         setTask("");
     }
 
     const handleDelete = (index: number) => {
-        let updated = deleteTodo(todos, index)
+        const updated = deleteTodo(todos, index)
         setTodos(updated)
     }
 
